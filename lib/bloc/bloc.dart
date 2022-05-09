@@ -49,6 +49,8 @@ class AppBloc extends Bloc<AppAction, AppState> {
           ),
         );
         final loginHandle = state.loginHandle;
+
+        /// When we have Invaild LoginHandle, we don't need to fetch notes.
         if (loginHandle != const LoginHandle.foobar()) {
           emit(
             AppState(
@@ -58,14 +60,20 @@ class AppBloc extends Bloc<AppAction, AppState> {
               notes: null,
             ),
           );
+          return;
         }
+
+        /// When we have vaild login handle, we can get notes.
+        final notes = await notesApi.getNotes(
+          loginHandle: loginHandle!,
+        );
 
         emit(
           AppState(
             isLoading: false,
-            loginError: loginHandle == null ? LoginErrors.invaildHandle : null,
+            loginError: null,
             loginHandle: loginHandle,
-            notes: null,
+            notes: notes,
           ),
         );
       },
