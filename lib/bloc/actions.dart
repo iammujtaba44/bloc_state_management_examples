@@ -15,8 +15,8 @@ class LoginAction extends AppAction {
 
 @immutable
 class NotesActions extends AppAction {
-  final String email;
-  final String password;
+  // final String email;
+  // final String password;
 
-  const NotesActions({required this.email, required this.password});
+  const NotesActions();
 }

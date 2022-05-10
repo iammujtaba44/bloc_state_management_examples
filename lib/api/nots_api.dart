@@ -13,9 +13,9 @@ abstract class NotesApiProtocol {
 
 @immutable
 class NotesApi implements NotesApiProtocol {
-  const NotesApi._sharedInstance();
-  static const NotesApi _instance = NotesApi._sharedInstance();
-  factory NotesApi.instance() => _instance;
+  // const NotesApi._sharedInstance();
+  // static const NotesApi _instance = NotesApi._sharedInstance();
+  // factory NotesApi.instance() => _instance;
   @override
   Future<Iterable<Note>?> getNotes({
     required LoginHandle loginHandle,

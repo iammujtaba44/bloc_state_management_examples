@@ -14,9 +14,9 @@ abstract class LoginApiProtocol {
 
 @immutable
 class LoginApi implements LoginApiProtocol {
-  const LoginApi._sharedInstance();
-  static const LoginApi _instance = LoginApi._sharedInstance();
-  factory LoginApi.instance() => _instance;
+  // const LoginApi._sharedInstance();
+  // static const LoginApi _instance = LoginApi._sharedInstance();
+  // factory LoginApi.instance() => _instance;
   @override
   Future<LoginHandle?> login({
     required String email,
